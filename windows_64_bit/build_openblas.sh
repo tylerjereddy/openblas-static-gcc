@@ -5,7 +5,7 @@
 
 OPENBLAS_COMMIT="701ea88"
 BUILD_BITS=64
-OPENBLAS_ROOT="~/github_projects/OpenBLAS"
+OPENBLAS_ROOT="/mnt/c/Users/treddy/github_projects/OpenBLAS"
 
 # initial setup / clean-up
 cd $OPENBLAS_ROOT
