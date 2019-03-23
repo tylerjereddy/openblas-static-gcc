@@ -5,7 +5,7 @@
 
 OPENBLAS_COMMIT="701ea88"
 BUILD_BITS=64
-OPENBLAS_ROOT="/mnt/c/Users/treddy/github_projects/OpenBLAS"
+OPENBLAS_ROOT="C:/msys64/home/treddy/OpenBLAS"
 
 # initial setup / clean-up
 cd $OPENBLAS_ROOT
@@ -20,7 +20,7 @@ vc_arch="X64"
 plat_tag="win_amd64"
 # for static gcc inclusion see:
 # https://github.com/xianyi/OpenBLAS/issues/1172
-cflags="-O2 -march=$march -mtune=generic $extra -static -static-libgcc"
+cflags="-O2 -march=$march -mtune=generic $extra"
 fflags="$cflags -frecursive -ffpe-summary=invalid,zero"
 
 # Build OpenBLAS
