@@ -16,7 +16,7 @@ march="x86-64"
 extra="-fno-asynchronous-unwind-tables"
 # for static gcc inclusion see:
 # https://github.com/xianyi/OpenBLAS/issues/1172
-cflags="-O2 -march=$march -mtune=generic $extra"
+cflags="-O2 -march=$march -mtune=generic $extra -static-libgcc"
 fflags="$cflags -frecursive -ffpe-summary=invalid,zero"
 
 # Build OpenBLAS
