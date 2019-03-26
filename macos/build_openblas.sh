@@ -16,10 +16,16 @@ march="x86-64"
 extra="-fno-asynchronous-unwind-tables"
 # for static gcc inclusion see:
 # https://github.com/xianyi/OpenBLAS/issues/1172
-cflags="-O2 -march=$march -mtune=generic $extra -static-libgcc"
+# also: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=46539
+cflags="-O2 -march=$march -mtune=generic $extra -static-libgcc -static-libgfortran"
 fflags="$cflags -frecursive -ffpe-summary=invalid,zero"
 
 # Build OpenBLAS
+# NOTE: physically removing file at
+# /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/ that
+# correspond to libquadmath*dylib helps force
+# the static link to libquadmath.a
+LIBRARY_PATH=/usr/local/Cellar/gcc/8.2.0/lib/gcc/8/ \
 CC=/usr/local/Cellar/gcc/8.2.0/bin/gcc-8 FC=/usr/local/Cellar/gcc/8.2.0/bin/gfortran-8 \
 make BINARY=$BUILD_BITS DYNAMIC_ARCH=1 USE_THREAD=1 USE_OPENMP=0 \
      NUM_THREADS=64 NO_WARMUP=1 NO_AFFINITY=1 CONSISTENT_FPCSR=1 \
