@@ -34,3 +34,4 @@ make TARGET=POWER8 USE_OPENMP=0 \
      COMMON_OPT="$cflags" \
      FCOMMON_OPT="$fflags"
 make PREFIX=$OPENBLAS_ROOT/$BUILD_BITS install
+tar -czvf openblas-ppc64le-power8.tar.gz ./$BUILD_BITS
