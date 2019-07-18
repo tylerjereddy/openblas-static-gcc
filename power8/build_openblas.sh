@@ -1,7 +1,7 @@
 #!/bin/bash
 # Build script for OpenBLAS on POWER8 Linux (ppc64le)
 
-OPENBLAS_COMMIT="v0.3.5"
+OPENBLAS_COMMIT="6a8b426"
 BUILD_BITS=64
 OPENBLAS_ROOT="/home/treddy/github_projects/OpenBLAS"
 
