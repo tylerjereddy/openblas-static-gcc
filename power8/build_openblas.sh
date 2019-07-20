@@ -11,6 +11,13 @@ git checkout $OPENBLAS_COMMIT
 git clean -xfd
 rm -rf $OPENBLAS_ROOT/$BUILD_BITS
 
+# temporarily adjust PATH to prefer
+# gcc 6.4 toolchain series for OpenBLAS build
+# so that we don't have a runtime depedency on
+# a super-new version of i.e., libgfortran
+# (which can cause issues in NumPy / Travis CI)
+PATH=/opt/at10.0/bin:$PATH
+
 # set flags
 extra="-fno-asynchronous-unwind-tables"
 # for static gcc inclusion see:
