@@ -1,7 +1,7 @@
 #!/bin/bash
 # Build script for OpenBLAS on ARMv8 Linux
 
-OPENBLAS_COMMIT="6a8b426"
+OPENBLAS_COMMIT="v0.3.7"
 BUILD_BITS=64
 OPENBLAS_ROOT="/home/treddy/OpenBLAS"
 
